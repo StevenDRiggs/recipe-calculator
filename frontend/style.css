@@ -1,0 +1,36 @@
+body {
+  background-color: rgb(255, 252, 248);
+}
+
+h2 {
+  font-family: fantasy;
+}
+
+.remove-ing-btn {
+  color: royalblue;
+}
+
+.display * {
+  display: inline-block;
+}
+
+.removeX {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.calculated-display-item {
+  list-style-type: hiragana;
+}
+
+.card {
+  background-color: blanchedalmond;
+}
+
+.servings {
+  margin: 15px auto;
+}
