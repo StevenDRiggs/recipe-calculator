@@ -1,3 +1,6 @@
+const DB_URL = 'http://localhost:8080'
+
+
 Object.prototype.last = function () {
     return this[this.length - 1]
 }
@@ -102,8 +105,6 @@ class Ingredient extends Meta {
 Ingredient._all = []
 
 
-const domain = 'http://localhost:3000'
-
 document.addEventListener('DOMContentLoaded', loadIngredients)
 
 function loadIngredients() {
@@ -111,15 +112,15 @@ function loadIngredients() {
     Quantity._all = []
     Ingredient._all = []
 
-    fetch(`${domain}/measures`)
+    fetch(`${DB_URL}/measures`)
         .then(response => response.json())
         .then(json => {Array.from(json).forEach(measure => {new Measure(measure.id, measure.measure, measure.divisible)})})
         .then(() => {
-            fetch(`${domain}/ingredients`)
+            fetch(`${DB_URL}/ingredients`)
                 .then(response => response.json())
                 .then(json => {Array.from(json).forEach(ingredient => {new Ingredient(ingredient.id, ingredient.name, ingredient.preferred_measure_id)})}) // preferred_measure_id must be snake_case here for compatibility
                 .then(() => {
-                    fetch(`${domain}/quantities`)
+                    fetch(`${DB_URL}/quantities`)
                         .then(response => response.json())
                         .then(json => {Array.from(json).forEach(quantity => {new Quantity(quantity.id, quantity.quantity)})})
                         .then(buildMenus)
@@ -396,7 +397,7 @@ function addIngredient(menuDiv) {
     morphDiv(menuDiv, quantityText, measureText, ingredientText)
 
     if (update) {
-        fetch(`${domain}/records_update`, {
+        fetch(`${DB_URL}/records_update`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -466,7 +467,7 @@ function calculate() {
         })
     })
 
-    fetch(`${domain}/calculate`, {
+    fetch(`${DB_URL}/calculate`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

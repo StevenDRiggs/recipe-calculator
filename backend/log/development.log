@@ -29256,3 +29256,323 @@ Processing by QuantitiesController#index as */*
 Completed 200 OK in 28ms (Views: 8.9ms | ActiveRecord: 2.3ms)
 
 
+Started GET "/" for ::1 at 2021-01-04 18:42:24 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /data/data/com.termux/files/home/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /data/data/com.termux/files/home/.rvm/gems/ruby-2.6.1/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /data/data/com.termux/files/home/.rvm/gems/ruby-2.6.1/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb (10.3ms)
+Completed 200 OK in 38ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-01-04 18:42:24 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/measures" for ::1 at 2021-01-04 18:47:34 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (1.4ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 68ms (Views: 43.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/ingredients" for ::1 at 2021-01-04 18:47:34 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 70ms (Views: 61.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/quantities" for ::1 at 2021-01-04 18:47:34 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (1.0ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 58ms (Views: 47.4ms | ActiveRecord: 2.9ms)
+
+
+Started PUT "/records_update" for ::1 at 2021-01-04 18:48:08 -0700
+Processing by ApplicationController#records_update as */*
+  Parameters: {"divisible"=>true, "quantity"=>{"id"=>27, "quantity"=>"1/8"}, "measure"=>{"id"=>171, "measure"=>"dry cup", "divisible"=>true}, "ingredient"=>{"id"=>350, "name"=>"All Purpose Flour", "preferredMeasure"=>{"id"=>171, "measure"=>"dry cup", "divisible"=>true}, "preferredMeasureId"=>171}, "application"=>{"divisible"=>true, "quantity"=>{"id"=>27, "quantity"=>"1/8"}, "measure"=>{"id"=>171, "measure"=>"dry cup", "divisible"=>true}, "ingredient"=>{"id"=>350, "name"=>"All Purpose Flour", "preferredMeasure"=>{"id"=>171, "measure"=>"dry cup", "divisible"=>true}, "preferredMeasureId"=>171}}}
+  [1m[36mQuantity Load (0.7ms)[0m  [1m[34mSELECT  "quantities".* FROM "quantities" WHERE "quantities"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mMeasure Load (0.6ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 171], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 350], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Measure Load (0.0ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 171], ["LIMIT", 1]]
+  ↳ app/models/ingredient.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 49ms (Views: 0.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/measures" for ::1 at 2021-01-04 18:48:08 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (0.8ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ingredients" for ::1 at 2021-01-04 18:48:08 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 70ms (Views: 67.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/quantities" for ::1 at 2021-01-04 18:48:09 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (0.6ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/records_update" for ::1 at 2021-01-04 18:48:18 -0700
+Processing by ApplicationController#records_update as */*
+  Parameters: {"divisible"=>false, "quantity"=>{"id"=>42, "quantity"=>"2"}, "measure"=>{"id"=>184, "measure"=>"unit", "divisible"=>false}, "ingredient"=>{"id"=>421, "name"=>"Banana", "preferredMeasure"=>{"id"=>184, "measure"=>"unit", "divisible"=>false}, "preferredMeasureId"=>184}, "application"=>{"divisible"=>false, "quantity"=>{"id"=>42, "quantity"=>"2"}, "measure"=>{"id"=>184, "measure"=>"unit", "divisible"=>false}, "ingredient"=>{"id"=>421, "name"=>"Banana", "preferredMeasure"=>{"id"=>184, "measure"=>"unit", "divisible"=>false}, "preferredMeasureId"=>184}}}
+  [1m[36mQuantity Load (0.5ms)[0m  [1m[34mSELECT  "quantities".* FROM "quantities" WHERE "quantities"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mMeasure Load (0.5ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 184], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 421], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Measure Load (0.1ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 184], ["LIMIT", 1]]
+  ↳ app/models/ingredient.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 22ms (Views: 1.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/measures" for ::1 at 2021-01-04 18:48:18 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (0.8ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ingredients" for ::1 at 2021-01-04 18:48:18 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (3.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 96ms (Views: 91.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/quantities" for ::1 at 2021-01-04 18:48:18 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (0.9ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/records_update" for ::1 at 2021-01-04 18:48:33 -0700
+Processing by ApplicationController#records_update as */*
+  Parameters: {"divisible"=>true, "quantity"=>{"id"=>29, "quantity"=>"1/2"}, "measure"=>{"id"=>186, "measure"=>"tsp", "divisible"=>true}, "ingredient"=>{"id"=>423, "name"=>"Vanilla Extract", "preferredMeasure"=>{"id"=>186, "measure"=>"tsp", "divisible"=>true}, "preferredMeasureId"=>186}, "application"=>{"divisible"=>true, "quantity"=>{"id"=>29, "quantity"=>"1/2"}, "measure"=>{"id"=>186, "measure"=>"tsp", "divisible"=>true}, "ingredient"=>{"id"=>423, "name"=>"Vanilla Extract", "preferredMeasure"=>{"id"=>186, "measure"=>"tsp", "divisible"=>true}, "preferredMeasureId"=>186}}}
+  [1m[36mQuantity Load (0.7ms)[0m  [1m[34mSELECT  "quantities".* FROM "quantities" WHERE "quantities"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mMeasure Load (0.6ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 423], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Measure Load (0.1ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+  ↳ app/models/ingredient.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/measures" for ::1 at 2021-01-04 18:48:33 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (0.7ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ingredients" for ::1 at 2021-01-04 18:48:33 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 49ms (Views: 47.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/quantities" for ::1 at 2021-01-04 18:48:33 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (0.8ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/records_update" for ::1 at 2021-01-04 18:48:46 -0700
+Processing by ApplicationController#records_update as */*
+  Parameters: {"divisible"=>true, "quantity"=>{"id"=>28, "quantity"=>"1/4"}, "measure"=>{"id"=>186, "measure"=>"tsp", "divisible"=>true}, "ingredient"=>{"id"=>346, "name"=>"Salt", "preferredMeasure"=>{"id"=>186, "measure"=>"tsp", "divisible"=>true}, "preferredMeasureId"=>186}, "application"=>{"divisible"=>true, "quantity"=>{"id"=>28, "quantity"=>"1/4"}, "measure"=>{"id"=>186, "measure"=>"tsp", "divisible"=>true}, "ingredient"=>{"id"=>346, "name"=>"Salt", "preferredMeasure"=>{"id"=>186, "measure"=>"tsp", "divisible"=>true}, "preferredMeasureId"=>186}}}
+  [1m[36mQuantity Load (0.5ms)[0m  [1m[34mSELECT  "quantities".* FROM "quantities" WHERE "quantities"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mMeasure Load (0.6ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 346], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Measure Load (0.1ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+  ↳ app/models/ingredient.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/measures" for ::1 at 2021-01-04 18:48:46 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (0.8ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ingredients" for ::1 at 2021-01-04 18:48:46 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/quantities" for ::1 at 2021-01-04 18:48:47 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (0.6ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/records_update" for ::1 at 2021-01-04 18:49:03 -0700
+Processing by ApplicationController#records_update as */*
+  Parameters: {"divisible"=>false, "quantity"=>{"id"=>34, "quantity"=>"1"}, "measure"=>{"id"=>184, "measure"=>"unit", "divisible"=>false}, "ingredient"=>{"id"=>395, "name"=>"Egg", "preferredMeasure"=>{"id"=>184, "measure"=>"unit", "divisible"=>false}, "preferredMeasureId"=>184}, "application"=>{"divisible"=>false, "quantity"=>{"id"=>34, "quantity"=>"1"}, "measure"=>{"id"=>184, "measure"=>"unit", "divisible"=>false}, "ingredient"=>{"id"=>395, "name"=>"Egg", "preferredMeasure"=>{"id"=>184, "measure"=>"unit", "divisible"=>false}, "preferredMeasureId"=>184}}}
+  [1m[36mQuantity Load (0.9ms)[0m  [1m[34mSELECT  "quantities".* FROM "quantities" WHERE "quantities"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mMeasure Load (0.9ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 184], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 395], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Measure Load (0.2ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = ? LIMIT ?[0m  [["id", 184], ["LIMIT", 1]]
+  ↳ app/models/ingredient.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/measures" for ::1 at 2021-01-04 18:49:03 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (0.8ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/ingredients" for ::1 at 2021-01-04 18:49:03 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (2.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 50ms (Views: 46.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/quantities" for ::1 at 2021-01-04 18:49:03 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (0.9ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/calculate" for ::1 at 2021-01-04 18:49:13 -0700
+Processing by ApplicationController#calculate as */*
+  Parameters: {"recipe"=>[{"ingredient"=>"All Purpose Flour", "quantity"=>"1/8", "measure"=>"dry cup", "divisible"=>true}, {"ingredient"=>"Banana", "quantity"=>"2", "measure"=>"unit", "divisible"=>false}, {"ingredient"=>"Vanilla Extract", "quantity"=>"1/2", "measure"=>"tsp", "divisible"=>true}, {"ingredient"=>"Salt", "quantity"=>"1/4", "measure"=>"tsp", "divisible"=>true}, {"ingredient"=>"Egg", "quantity"=>"1", "measure"=>"unit", "divisible"=>false}], "makes"=>"8", "desired"=>"27", "application"=>{"recipe"=>[{"ingredient"=>"All Purpose Flour", "quantity"=>"1/8", "measure"=>"dry cup", "divisible"=>true}, {"ingredient"=>"Banana", "quantity"=>"2", "measure"=>"unit", "divisible"=>false}, {"ingredient"=>"Vanilla Extract", "quantity"=>"1/2", "measure"=>"tsp", "divisible"=>true}, {"ingredient"=>"Salt", "quantity"=>"1/4", "measure"=>"tsp", "divisible"=>true}, {"ingredient"=>"Egg", "quantity"=>"1", "measure"=>"unit", "divisible"=>false}], "makes"=>"8", "desired"=>"27"}}
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/measures" for ::1 at 2021-01-04 19:02:58 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (1.0ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ingredients" for ::1 at 2021-01-04 19:02:58 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (2.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 54ms (Views: 51.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/quantities" for ::1 at 2021-01-04 19:02:58 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (0.8ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/measures" for ::1 at 2021-01-04 19:15:28 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (1.0ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ingredients" for ::1 at 2021-01-04 19:15:28 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (35.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 81ms (Views: 45.4ms | ActiveRecord: 35.0ms)
+
+
+Started GET "/quantities" for ::1 at 2021-01-04 19:15:28 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (1.1ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/measures" for ::1 at 2021-01-04 19:16:03 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (1.0ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/ingredients" for ::1 at 2021-01-04 19:16:03 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (1.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/quantities" for ::1 at 2021-01-04 19:16:03 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (0.6ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.6ms)
+
+
