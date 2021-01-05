@@ -1,9 +1,9 @@
 # Recipe Calculator
 
-![GitHub repo size](https://img.shields.io/github/repo-size/StevenDRiggs/featured-projects)
-![GitHub contributors](https://img.shields.io/github/contributors/StevenDRiggs/featured-projects)
-![GitHub stars](https://img.shields.io/github/stars/StevenDRiggs/featured-projects)
-![GitHub forks](https://img.shields.io/github/forks/StevenDRiggs/featured-projects)
+![GitHub repo size](https://img.shields.io/github/repo-size/StevenDRiggs/recipe-calculator)
+![GitHub contributors](https://img.shields.io/github/contributors/StevenDRiggs/recipe-calculator)
+![GitHub stars](https://img.shields.io/github/stars/StevenDRiggs/recipe-calculator)
+![GitHub forks](https://img.shields.io/github/forks/StevenDRiggs/recipe-calculator)
 
 This recipe calulator allows users to enter recipe ingredients and quantities and recalculate amounts needed for a specified
 number of servings.
