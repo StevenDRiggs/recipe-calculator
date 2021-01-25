@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'application#home'
 
   resources :quantities
   resources :measures

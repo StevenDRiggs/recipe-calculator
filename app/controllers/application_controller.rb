@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::API
+  def home
+    render :index
+  end
+
   def records_update
     quantity = Quantity.find_by(id: params[:quantity][:id]) || Quantity.create(quantity: params[:quantity][:quantity])
     measure = Measure.find_by(id: params[:measure][:id]) || Measure.create(measure: params[:measure][:measure], divisible: params[:divisible])
